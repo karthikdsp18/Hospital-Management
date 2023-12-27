@@ -5,7 +5,6 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DBConnUtil {
-	//static Connection connection = null;
 	public static Connection getConnection(String props)
 	{
 		Connection connection=null;
@@ -14,18 +13,14 @@ public class DBConnUtil {
 			Class.forName(properties[2]);
 			System.out.println("class loaded");
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
 			System.out.println("Class Not Established");
 			e.printStackTrace();
 		}
-		
 		try {
 			connection = DriverManager.getConnection(  
 					properties[3],properties[0],properties[1]);
 			System.out.println("con established");
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			
 			e.printStackTrace();
 		}
 		
